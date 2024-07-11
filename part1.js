@@ -59,3 +59,15 @@ function createInstructionList(obj) {
   });
   return instructions;
 }
+
+// Same thing just getting a list of items directly instead of accessing children
+const instructionsListRef2 = document.querySelectorAll(".instructions-list > li");
+const instructions2 = [];
+instructionsListRef2.forEach((item, index) => {
+  const instructionObj2 = {
+    order: index + 1,
+    text: item.outerText,
+  };
+  instructions2.push(instructionObj2);
+});
+console.log(instructions2);
